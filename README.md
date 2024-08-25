@@ -1,44 +1,74 @@
-# WIFI_based_RFID_attendance-system_using_NodeMcu_and_Django
+# WIFI-based RFID Attendance System using NodeMCU and Django
 
--> This attendance system is based on RFID technology for identification. It sends the attendance data to the server using wifi.
+This attendance system uses RFID technology for identification and sends attendance data to a server via WiFi.
 
--> For reading RFID card and sending data to server RFID module RC522 and NodeMCU is used. The server side code is written using django and frontend is made using Bootstrap 4.
+## Features
 
--> It also do not requires the wifi credentials to be hard coded inside it. I have used Arduino's Wifi manager library for this. It automatically creates a hotspot when it doesn't find previous or saved wifi. You can simply connect with its hotspot using a device and can give required wifi credentials and it will connect to that easily.
+- RFID-based identification using RC522 module
+- NodeMCU for reading RFID cards and sending data to server
+- Django-based server with Bootstrap 4 frontend
+- Automatic WiFi configuration using Arduino's WiFi Manager library
+  - Creates a hotspot for easy WiFi setup when no saved networks are available
 
-# Technology Stack
-SOFTWARE:
-1) Django Framework
-2) Bootstrap
-3) Javascript-AJAX
-4) HTML and CSS
+## Technology Stack
 
-HARDWARE:
-1) NodeMCU
-2) RC-522 RFID Reader
-3) LEDs and Buzzer
+### Software:
+1. Django Framework
+2. Bootstrap 4
+3. JavaScript (AJAX)
+4. HTML and CSS
 
-# SCREENSHOTS
-1) Password Authentication :
+### Hardware:
+1. NodeMCU
+2. RC-522 RFID Reader
+3. LEDs and Buzzer
 
-![Screenshot (35)](https://user-images.githubusercontent.com/37211676/65944711-f413d300-e44f-11e9-896b-63ac29feae6a.png)
+## Screenshots
 
-2) Attendance Homescreen :
+### 1. Password Authentication
+![Password Authentication](https://user-images.githubusercontent.com/37211676/65944711-f413d300-e44f-11e9-896b-63ac29feae6a.png)
 
-![Screenshot (17)](https://user-images.githubusercontent.com/37211676/65944778-1b6aa000-e450-11e9-8bd7-ca5db54e3ac9.png)
+### 2. Attendance Homescreen
+![Attendance Homescreen](https://user-images.githubusercontent.com/37211676/65944778-1b6aa000-e450-11e9-8bd7-ca5db54e3ac9.png)
 
-3) Registered User Details :
+### 3. Registered User Details
+![Registered User Details](https://user-images.githubusercontent.com/37211676/65944793-1efe2700-e450-11e9-8f7e-e8935ac15258.png)
 
-![Screenshot (18)](https://user-images.githubusercontent.com/37211676/65944793-1efe2700-e450-11e9-8f7e-e8935ac15258.png)
 
-4) All Users Management Screen :
+## Setup and Installation
 
-![Screenshot (19)](https://user-images.githubusercontent.com/37211676/65944802-24f40800-e450-11e9-9bce-0ba0cbc9dd73.png)
+To be added soon...
 
-5) Hardware Prototype
+## Usage
 
-![WhatsApp Image 2019-08-11 at 9 41 42 PM (1)](https://user-images.githubusercontent.com/37211676/65944846-3b9a5f00-e450-11e9-8449-4b11fbc246ba.jpeg)
+To be added soon...
 
-6) Final Hardware with PCB
+## Contributing
 
-![WhatsApp Image 2019-08-11 at 9 41 41 PM (3)](https://user-images.githubusercontent.com/37211676/65944862-4228d680-e450-11e9-849c-fb3f0b062e3f.jpeg)
+We welcome contributions to improve the WIFI-based RFID Attendance System! Here are some ways you can contribute:
+
+1. Report bugs or suggest features by opening an issue
+2. Improve documentation
+3. Submit pull requests with bug fixes or new features
+
+Please follow these steps for contributing:
+
+1. Fork the repository
+2. Create a new branch for your feature or bug fix
+3. Make your changes and commit them with a clear commit message
+4. Push your changes to your fork
+5. Submit a pull request to the main repository
+
+Before submitting a pull request, please ensure:
+- Your code follows the project's coding style
+- You've added tests for new features or bug fixes
+- All tests pass
+- You've updated the documentation if necessary
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you encounter any problems or have questions, please open an issue on the GitHub repository.
