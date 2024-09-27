@@ -1,134 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      * {
-        margin: 0px; 
-        padding: 0px; 
-        box-sizing: border-box;
-      }
-      
-      body{
-          margin: 0;
-          padding: 0;
-          font-family: sans-serif;
-          background: url(https://i.ibb.co/xMBWXzd/bg-01.jpg);
-          opacity: 0.92;
-          border-radius: 5px;
-      }
-      
-      .box row{
-          width: 400px;
-          padding: 40px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: #191919;
-          text-align: center;
-      }
-      
-      .box h1{
-          color: white;
-          font-family: "Times New Roman";
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          font-weight: 500;
-      }
-      
-      .box input[type = "text"], .box input[type = "password"]{
-          border: 0;
-          background: none;
-          display: block;
-          margin: 20px auto;
-          text-align: center;
-          border: 2px solid #3498db;
-          padding: 14px 10px;
-          width: 200px;
-          outline: none;
-          color: white;
-          border-radius: 24px;
-          transition: 0.25s;
-      }
-      
-      .box input[type = "text"]:focus, .box input[type = "password"]:focus{
-          width: 280px;
-          border-color: #2ecc71;
-      }
-      
-      .box input[type = "submit"]{
-          border: 0;
-          background: none;
-          display: block;
-          margin: 20px auto;
-          text-align: center;
-          border: 2px solid #2ecc71;
-          padding: 14px 40px;
-          outline: none;
-          color: white;
-          border-radius: 24px;
-          transition: 0.25s;
-          cursor: pointer;
-      }
-      
-      .box input[type = "submit"]:hover{
-          background: #2ecc71;
-      }
-      
-      .box p{
-          color: grey;
-          font-family: arial,sans-serif;
-          font-size: 13px;
-      }
-      
-      
-      .box p:hover{
-          text-decoration: underline;
-          cursor: pointer;
-      }
-      </style>
-    <!-- Required meta tags -->
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>User Login</title>
-  </head>
-  <body>
-     </div>
-      <div class="container-fluid bg-warning">
-      <br>
-      <h1 class="text-center">RFID Attendance System</h1>
-       <br>
-          </div>
-      <div class="container-fluid bg-info">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 yes mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-              {% if message %}
-              <h6 class="text-center text-danger">Invalid Credentials</h6>
-              {% endif %}
-            <h5 class="card-title text-center">Sign In</h5>
-            <form class="form-signin" action="/login/" method="post"> {% csrf_token %}
-              {{ form.as_p }}
-              <br>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-              <hr class="my-4">
-                <h6 class="text-center">Created by : Team 7</h6>
-            </form>
-          </div>
+    <title>RFID Attendance System - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen">
+    <header class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="https://kalasalingam.ac.in/wp-content/uploads/2022/02/Logo.png" alt="Kalasalingam University Logo" class="h-12">
+            <h1 class="text-2xl font-bold">RFID Attendance System</h1>
         </div>
-      </div>
-    </div>
-     <br>
-  </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+            {% if message %}
+            <p class="text-red-500 text-center mb-4">Invalid Credentials</p>
+            {% endif %}
+            <form action="/login/" method="post" class="space-y-6">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded transition duration-300">
+                    Sign In
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-center py-4">
+        <p class="text-sm text-gray-400">Created by: Team 7</p>
+    </footer>
+</body>
 </html>
